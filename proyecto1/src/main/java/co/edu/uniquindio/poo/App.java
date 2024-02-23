@@ -6,18 +6,13 @@ package co.edu.uniquindio.poo;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        // tipos de datos
-        //PRIMITIVOS
+        Estudiante estudiante = new Estudiante ("Manuel","Pineda Varela","1092455543","3045879300","manuel.pinedav@uqvirtual.edu.co",(byte)18); 
+        estudiante.presentarExamen(("diagrama de clases"));
 
-        int edadEstudiante = 0;
-        edadEstudiante = 100;
 
-        double precio = 100.9;
-
-        boolean flag = true or false;
-
-        String nombre; //null
-
+       Perro perro = new Perro ("kiara","criollo");
+       perro.caminar(50);
     }
+
+
 }
