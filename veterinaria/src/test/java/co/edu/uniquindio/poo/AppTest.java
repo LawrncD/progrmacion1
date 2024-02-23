@@ -41,4 +41,25 @@ public class AppTest {
         LOG.info("Finalizacion prueba datos nulos");
 
     }
+
+    @Test
+    public void datosVacios(){
+        LOG.info("Inicio prueba datos vacios");
+        assertThrows(Throwable.class,() -> new Animal("", "","",(byte)1,"","",(byte)20));
+        LOG.info("Inicio prueba datos vacios");
+    }
+    @Test
+    public void edadNegativa(){
+        LOG.info("Inicio prueba datos edad negativa");
+        assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)-45, "Hembra" , "Blanco" , (byte)20));
+        LOG.info("Inicio prueba datos edad negativa");
+
+    }
+    @Test
+    public void pesoNegativo(){
+        LOG.info("Inicio prueba datos peso negativo");
+        assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)1, "Hembra" , "Blanco" , (byte)-45));
+        LOG.info("Inicio prueba datos peso negativo");
+
+    }
 }
