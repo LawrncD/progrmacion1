@@ -8,6 +8,7 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
@@ -18,7 +19,6 @@ import org.junit.jupiter.api.Test;
  */
 public class AppTest {
     private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
-
     @Test
     public void datosCompletos(){
     LOG.info("Inicio pruebas datos completos");
@@ -46,20 +46,31 @@ public class AppTest {
     public void datosVacios(){
         LOG.info("Inicio prueba datos vacios");
         assertThrows(Throwable.class,() -> new Animal("", "","",(byte)1,"","",(byte)20));
-        LOG.info("Inicio prueba datos vacios");
+        LOG.info("fin prueba datos vacios");
     }
     @Test
-    public void edadNegativa(){
-        LOG.info("Inicio prueba datos edad negativa");
-        assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)-45, "Hembra" , "Blanco" , (byte)20));
-        LOG.info("Inicio prueba datos edad negativa");
+    public void valoresNegativos(){
+        LOG.info("Inicio prueba  datos negativos");
+        assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)-45, "Hembra" , "Blanco" , (byte)-20));
+            if (!( (byte)-45 <0  || (byte)-20 < 0)) {
+                LOG.info("No puedes tener datos negativos");
+            }
+                else{
+                    LOG.info("La prueba paso");
+                }
+        LOG.info("fin prueba datos negativos");
 
     }
     @Test
-    public void pesoNegativo(){
-        LOG.info("Inicio prueba datos peso negativo");
-        assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)1, "Hembra" , "Blanco" , (byte)-45));
-        LOG.info("Inicio prueba datos peso negativo");
+public void numerosGrandes() {
+    LOG.info("Inicio pruebas numeros Grandes");
+    assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)200, "Hembra" , "Blanco" , (byte)2000));
+     if (!( (byte)200 >= 200 || (byte)2000 > 600)) {
+        LOG.info("El peso o la edad sobrepasan los límites");
+     } else {
+        LOG.info("La prueba pasó: El peso o la no edad sobrepasan los límites");
+        }
+    LOG.info("Fin de pruebas numeros grandes");
+}
 
-    }
 }

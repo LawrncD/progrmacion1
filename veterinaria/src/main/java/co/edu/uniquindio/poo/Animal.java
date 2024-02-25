@@ -13,6 +13,8 @@ public record Animal(String nombre, String especie , String raza , Byte edad , S
         assert raza != "";
         assert genero != "";
         assert color != "";
+       assert edad < 200;
+       assert peso <=600;
 
     }
 }
