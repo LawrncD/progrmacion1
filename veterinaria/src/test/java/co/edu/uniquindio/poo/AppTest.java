@@ -51,26 +51,31 @@ public class AppTest {
     @Test
     public void valoresNegativos(){
         LOG.info("Inicio prueba  datos negativos");
-        assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)-45, "Hembra" , "Blanco" , (byte)-20));
-            if (!( (byte)-45 <0  || (byte)-20 < 0)) {
-                LOG.info("No puedes tener datos negativos");
+        assertThrows(Throwable.class, ()-> new Animal ("Lupe","Perro","Criollo", (byte)-3, "Hembra" , "Cafe" , (byte)-54));
+        int peso = (byte)-54;   
+        int edad = (byte)-3;
+        if ( edad <0) {
+                LOG.info("la edad no puede tener datos negativos");
             }
-                else{
-                    LOG.info("La prueba paso");
-                }
+        if (peso < 0) {
+             LOG.info("el peso no puede tener datos negativos");
+            }
         LOG.info("fin prueba datos negativos");
 
     }
     @Test
-public void numerosGrandes() {
-    LOG.info("Inicio pruebas numeros Grandes");
-    assertThrows(Throwable.class,() -> new Animal ("Kiara","Perro","Criollo", (byte)200, "Hembra" , "Blanco" , (byte)2000));
-     if (!( (byte)200 >= 200 || (byte)2000 > 600)) {
-        LOG.info("El peso o la edad sobrepasan los límites");
-     } else {
-        LOG.info("La prueba pasó: El peso o la no edad sobrepasan los límites");
+    public void numerosGrandes() {
+        LOG.info("Inicio pruebas numeros Grandes");
+        assertThrows(Throwable.class, ()-> new Animal ("Lupe","Perro","Criollo", (byte)200, "Hembra" , "Cafe" , (byte)2000));
+        int peso = (byte)2000;   
+        int edad = (byte)200;
+        if ( edad >=200) {
+           LOG.info("la edad no puede tener datosdatos tan grandes");
         }
-    LOG.info("Fin de pruebas numeros grandes");
+        if (peso > 600) {
+            LOG.info("el peso no puede tener datos tan grandes");
+         }
+     LOG.info("Fin de pruebas numeros grandes");
 }
 
 }
