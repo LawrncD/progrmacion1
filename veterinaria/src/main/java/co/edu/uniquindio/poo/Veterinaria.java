@@ -20,7 +20,7 @@ public class Veterinaria {
         return Collections.unmodifiableCollection(listaMascotas);
     }
     public void registrarMascota(Mascota mascota) {
-        assert verificarNumeroIdentificacion(mascota.numerodeindentificacion()) == false : "Ya existe una mascota con esa identificacion" + mascota.numerodeindentificacion();
+        assert verificarNumeroIdentificacion(mascota.numerodeindentificacion()) == false : "Ya existe una mascota con esa identificacion " + mascota.numerodeindentificacion();
         listaMascotas.add(mascota);
     }
 
@@ -33,4 +33,5 @@ public class Veterinaria {
         }
         return exiteMascota;
     }
+
 }

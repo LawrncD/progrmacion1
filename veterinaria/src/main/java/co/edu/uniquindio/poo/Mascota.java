@@ -12,4 +12,12 @@ public record Mascota(String nombre, String especie , String raza , byte edad , 
         assert edad <= 200;
         assert peso <= 600;
     }
+
+    public int getEdad() {
+       return edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
 }
