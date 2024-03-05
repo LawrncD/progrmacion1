@@ -23,6 +23,9 @@ public class VeterinariaTest {
         Veterinaria veterinaria = new Veterinaria("Amigos Peludos");
         Mascota mascota = new Mascota("Kiara", "perro", "criollo", (byte)5, "Hembra", "Blanco", (byte)20, "1092455543"); 
         veterinaria.registrarMascota(mascota);
+        for (Mascota nombre : veterinaria.getlisMascotas()){
+            System.out.println((nombre.getNombre()));
+        }
         LOG.info("Fin registro mascota");
 
     }

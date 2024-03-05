@@ -10,6 +10,7 @@ public class Curso {
     public Curso(String nombre){
         this.nombre = nombre;
         this.listaEstudiantes = new LinkedList <Estudiante>();
+        assert nombre != null && !nombre.isBlank();
 
     }
    // public void setNombre(String nombre){

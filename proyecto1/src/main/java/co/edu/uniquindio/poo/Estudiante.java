@@ -15,5 +15,8 @@ public record Estudiante( String nombres , String apellidos , String numerodeind
     public void presentarExamen(String enunciado){
         System.out.println("Resolver examen: "+ enunciado);
     }
+    public String getNombre() {
+        return nombres;
+    }
 
 }
