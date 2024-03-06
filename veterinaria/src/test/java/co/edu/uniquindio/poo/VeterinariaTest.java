@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.logging.Logger;
@@ -25,6 +27,7 @@ public class VeterinariaTest {
         veterinaria.registrarMascota(mascota);
         for (Mascota nombre : veterinaria.getlisMascotas()){
             System.out.println((nombre.getNombre()));
+            assertTrue(veterinaria.getlisMascotas().contains(mascota));
         }
         LOG.info("Fin registro mascota");
 
@@ -43,8 +46,7 @@ public class VeterinariaTest {
         Veterinaria veterinaria = new Veterinaria("Amigos Peludos");
         Mascota mascota = new Mascota("Kiara", "perro", "criollo", (byte)5, "Hembra", "Blanco", (byte)20, "1092455543");
         veterinaria.registrarMascota(mascota);
-        Mascota mascota2 = new Mascota("max", "perro", "labrador", (byte)5, "Macho", "amarillo", (byte)20, "1092455543");
-        veterinaria.registrarMascota(mascota2);
+        assertThrows(Throwable.class, ()-> veterinaria.registrarMascota(mascota)); 
         LOG.info("Fin prueba mascotas repetidas");
 
     }

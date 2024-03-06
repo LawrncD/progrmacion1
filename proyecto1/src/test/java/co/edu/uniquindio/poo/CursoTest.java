@@ -21,7 +21,7 @@ public class CursoTest {
     public void registrarEstudiante(){
         LOG.info("Inicio registro estudiante");
         Curso curso1 = new Curso("Programacion 1");
-        Estudiante estudiante = new Estudiante ("manuel","Pineda","1092455543","3045879300","manuel.pinedav@uqvirtual.edu.co ",(byte)19); 
+        Estudiante estudiante = new Estudiante ("Samnuel","Pineda","1092455543","3045879300","manuel.pinedav@uqvirtual.edu.co ",(byte)19); 
         curso1.registrarEstudiante(estudiante);
         Estudiante estudiante_2 = new Estudiante("Manuel", "Pineda Varela", "109245543", "3045879300", "manueljksljfkl@jjfasdfl", (byte)18);
         curso1.registrarEstudiante(estudiante_2);
@@ -43,13 +43,9 @@ public class CursoTest {
     public void estudiantesRespetidos(){
         LOG.info("Inicio prueba estudiantes repetidos");
         Curso curso = new Curso ("Programacion 1");
-        Estudiante estudiante_1 = new Estudiante("Manuel", "Pineda Varela", "1092455543", "3045879300", "manueljksljfkl@jjfasdfl", (byte)18);
-        Estudiante estudiante_2 = new Estudiante("Manuel", "Pineda Varela", "1092455543", "3045879300", "manueljksljfkl@jjfasdfl", (byte)18);
-        curso.registrarEstudiante(estudiante_2);
+        Estudiante estudiante_1 = new Estudiante("Manuel", "Pineda Varela", "1092455543", "3045879300", "manueljk@sljfkl@jjfasdfl", (byte)18);
         curso.registrarEstudiante(estudiante_1);
+        assertThrows(Throwable.class, ()-> curso.registrarEstudiante(estudiante_1)); 
         LOG.info("Fin prueba datos respetidos");
-
-        
-
     }
 }

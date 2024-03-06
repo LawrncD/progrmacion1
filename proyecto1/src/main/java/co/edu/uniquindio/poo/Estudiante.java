@@ -18,5 +18,6 @@ public record Estudiante( String nombres , String apellidos , String numerodeind
     public String getNombre() {
         return nombres;
     }
+   
 
 }
