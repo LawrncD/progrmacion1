@@ -24,10 +24,13 @@ public class CursoTest {
     public void registrarEstudiante(){
         LOG.info("Inicio registro estudiante");
         Curso curso1 = new Curso("Programacion 1");
+
         Estudiante estudiante = new Estudiante ("Samnuel","Pineda","1092455543","3045879300","manuel.pinedav@uqvirtual.edu.co ",(byte)19); 
         curso1.registrarEstudiante(estudiante);
+
         Estudiante estudiante_2 = new Estudiante("Manuel", "Pineda Varela", "109245543", "3045879300", "manueljksljfkl@jjfasdfl", (byte)18);
         curso1.registrarEstudiante(estudiante_2);
+
         for(Estudiante nombre : curso1.getlistaEstudiantes()){
             System.out.println(nombre.getNombre());
         }
@@ -114,7 +117,7 @@ public class CursoTest {
         curso.registrarEstudiante(estudiante2);
 
         Collection<Estudiante>listaOrdenadaObtenida = curso.getlistaMayores();
-        Collection<Estudiante>listaOrdenadaDeseada = List.of(estudiante,estudiante2,estudiante_1);
+        Collection<Estudiante>listaOrdenadaDeseada = List.of(estudiante_1,estudiante,estudiante2);
         assertIterableEquals(listaOrdenadaObtenida, listaOrdenadaDeseada);
         for(Estudiante edad : curso.getlistaMayores()){
             System.out.println(edad.getNombre());

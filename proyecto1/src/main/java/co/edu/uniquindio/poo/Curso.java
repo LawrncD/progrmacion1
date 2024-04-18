@@ -57,6 +57,9 @@ public class Curso {
         listaOrdenada=listaEstudiantes.stream().sorted(Comparator.comparing(Estudiante::nombres)).toList();
         return Collections.unmodifiableCollection(listaOrdenada);
     }
+
+
+
     public Collection<Estudiante> getlistaEstudiantesedadDesendente() {
         Collection<Estudiante>listaOrdenada = null;
         //Realizar el metodo burbuja para ordenar una lista de objetos en java
@@ -65,13 +68,13 @@ public class Curso {
         return Collections.unmodifiableCollection(listaOrdenada);
     }
     public Collection<Estudiante> getlistaMayores() {
-       Collection<Estudiante> listaMayoresEdad = null;
+       Collection<Estudiante> getlistaMayores = new LinkedList<Estudiante>();
        for(Estudiante estudiante:listaEstudiantes){
         if(estudiante.edad() >= 18){
-            listaMayoresEdad.add(estudiante);
+            getlistaMayores.add(estudiante);
         }
        }
-       return listaMayoresEdad;
+       return getlistaMayores;
     }
 
     }

@@ -81,6 +81,5 @@ public class VeterinariaTest {
             System.out.println(mascota.getNombre());
         }
         LOG.info("fin prueba mascotas obtener nombres");
-    }
-    
+    }    
 }
