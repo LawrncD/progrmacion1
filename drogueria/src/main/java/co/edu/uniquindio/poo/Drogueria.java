@@ -42,7 +42,27 @@ public class Drogueria {
         listaClientes.add(cliente);
     }
     public void registrarPedido(Pedido pedido) {
-       ListaPedidos.add(pedido);
+        assert verificar_stock() == false : "No se puede realizar pedido porque no hay stock";
+        ListaPedidos.add(pedido);
+    }
+  
+    private boolean verificar_stock (){
+        boolean hay_stock = false;
+        for(Producto producto : listaProductos){
+            if ( producto.getStock() == 0) {
+                hay_stock = true;
+            }
+    }
+        return hay_stock;
+    }
+    public Collection<Producto> obtenerStockMayorCien() {
+        Collection<Producto> listaMayoresStockCien = new LinkedList<Producto>();
+        for (Producto producto : listaProductos) {
+            if (producto.getStock()>=100) {
+                listaMayoresStockCien.add(producto);
+            }
+        }
+        return listaMayoresStockCien;
     }
 
 }
