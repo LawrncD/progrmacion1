@@ -44,7 +44,12 @@ public abstract class  Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", apellidos=" + apellidos + ", DNI=" + DNI + ", direccion=" + direccion
+                + ", telefono=" + telefono + "]";
+    }
 
-
+    
 
 }

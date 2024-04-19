@@ -11,5 +11,10 @@ public Empleado(String nombre, String apellidos, String dNI, String direccion, S
 public double getSalario() {
     return salario;
 }
+
+@Override
+public String toString() {
+    return "Empleado [salario=" + salario + "]";
+}
  
 }

@@ -30,7 +30,12 @@ public class Drogueria {
     public Collection<Empleado> getLisEmpleados() {
         return listaEmpleados;
     }
-
+    
+    @Override
+    public String toString() {
+        return "Drogueria [nombre=" + nombre + ", listaProductos=" + listaProductos + ", ListaPedidos=" + ListaPedidos
+                + ", listaClientes=" + listaClientes + ", listaEmpleados=" + listaEmpleados + "]";
+    }
     public void registrarProducto(Producto producto){
         listaProductos.add(producto);
         
@@ -64,5 +69,13 @@ public class Drogueria {
         }
         return listaMayoresStockCien;
     }
-
+    public double costoTotalPedido(Cliente cliente) {
+        double costo = 0;
+        for (Pedido pedido : ListaPedidos) {
+            if (pedido.getClientePedido().equals(cliente)) {
+                costo = pedido.getCantidad() * pedido.getPproductoPedido().getPrecio();
+            }
+        }
+        return costo;
+    }
 }

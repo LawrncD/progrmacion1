@@ -17,4 +17,9 @@ public void setIndicaciones(String indicaciones) {
     this.indicaciones = indicaciones;
 }
 
+@Override
+public String toString() {
+    return "Hogar [indicaciones=" + indicaciones + "]";
+}
+
 }

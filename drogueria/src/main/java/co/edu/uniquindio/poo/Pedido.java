@@ -34,5 +34,12 @@ public class Pedido {
     public void setClientePedido(Cliente clientePedido) {
         this.clientePedido = clientePedido;
     }
+    @Override
+    public String toString() {
+        return "Pedido [fecha=" + fecha + ", cantidad=" + cantidad + ", pproductoPedido=" + pproductoPedido
+                + ", clientePedido=" + clientePedido + "]";
+    }
+   
     
+   
 }

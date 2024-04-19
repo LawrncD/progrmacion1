@@ -7,4 +7,9 @@ public class Gerente extends Empleado{
         //TODO Auto-generated constructor stub
     }
 
+    @Override
+    public String toString() {
+        return "Gerente []";
+    }
+
 }

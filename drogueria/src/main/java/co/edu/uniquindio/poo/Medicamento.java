@@ -17,4 +17,9 @@ public void setDosis(double dosis) {
     this.dosis = dosis;
 }
 
+@Override
+public String toString() {
+    return "Medicamento [dosis=" + dosis + "]";
+}
+
 }

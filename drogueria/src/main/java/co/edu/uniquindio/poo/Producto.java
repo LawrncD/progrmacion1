@@ -52,6 +52,11 @@ public void setStock(int stock) {
 public void setProveedor(String proveedor) {
     this.proveedor = proveedor;
 }
+@Override
+public String toString() {
+    return "Producto [codigoProducto=" + codigoProducto + ", nombre=" + nombre + ", descripcion=" + descripcion
+            + ", precio=" + precio + ", stock=" + stock + ", proveedor=" + proveedor + "]";
+}
 
 
  

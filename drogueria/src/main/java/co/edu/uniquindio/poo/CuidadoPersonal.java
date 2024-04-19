@@ -17,4 +17,9 @@ public void setIngredientes(String ingredientes) {
     this.ingredientes = ingredientes;
 }
 
+@Override
+public String toString() {
+    return "CuidadoPersonal [ingredientes=" + ingredientes + "]";
+}
+
 }
