@@ -111,6 +111,7 @@ public class AppTest {
     
             drogueria.registrarEmpleado(empleado_1);
             drogueria.registrarEmpleado(gerente);
+            drogueria.registrarPedido(pedido);
     
             Collection<Producto>listaProductosStock100 = drogueria.obtenerStockMayorCien();
             Collection<Producto>listaProductosDeseados = List.of(jabon,crema);

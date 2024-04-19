@@ -3,10 +3,10 @@ package co.edu.uniquindio.poo;
 import java.time.LocalDate;
 
 public class Pedido {
-    public final LocalDate fecha;
-    public int cantidad;
-    public Producto pproductoPedido;
-    public Cliente clientePedido;
+    private final LocalDate fecha;
+    private int cantidad;
+    private Producto pproductoPedido;
+    private Cliente clientePedido;
     public Pedido(LocalDate fecha, int cantidad, Producto pproductoPedido, Cliente clientePedido) {
         this.fecha = fecha;
         this.cantidad = cantidad;

@@ -4,11 +4,11 @@ import java.util.Collection;
 
 public class Drogueria {
     private final String nombre;
-    public final Collection<Producto> listaProductos;
-    public final Collection<Pedido> ListaPedidos;
-    public final Collection<Cliente> listaClientes;
-    public final Collection<Empleado> listaEmpleados;
-    public Drogueria(String nombre) {
+    private final Collection<Producto> listaProductos;
+    private final Collection<Pedido> ListaPedidos;
+    private final Collection<Cliente> listaClientes;
+    private final Collection<Empleado> listaEmpleados;
+    Drogueria(String nombre) {
         this.nombre = nombre;
         this.listaProductos = new LinkedList<Producto>();
         this.ListaPedidos = new LinkedList<Pedido>();
