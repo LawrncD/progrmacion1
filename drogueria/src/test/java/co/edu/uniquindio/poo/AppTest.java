@@ -120,7 +120,6 @@ public class AppTest {
                 System.err.println(producto.getNombre());
             }
 
-            System.err.println(drogueria.costoTotalPedido(Maria));
     
             LOG.info("Finalizando test prductos_stock_100");
         }
