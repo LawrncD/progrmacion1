@@ -46,6 +46,10 @@ public class Drogueria {
     public void registrarCliente(Cliente cliente) {
         listaClientes.add(cliente);
     }
+    /**
+     * Este metodo registra un pedido asegurandose que el producto selecionado tenga stock disponible con ayuda del assert
+     * @param pedido
+     */
     public void registrarPedido(Pedido pedido) {
         assert verificar_stock() == false : "No se puede realizar pedido porque no hay stock";
         ListaPedidos.add(pedido);
@@ -60,6 +64,11 @@ public class Drogueria {
     }
         return hay_stock;
     }
+
+    /**
+     * Este metodo retorna los productos que tengo stock mayor a 100
+     * @return
+     */
     public Collection<Producto> obtenerStockMayorCien() {
         Collection<Producto> listaMayoresStockCien = new LinkedList<Producto>();
         for (Producto producto : listaProductos) {
@@ -69,6 +78,11 @@ public class Drogueria {
         }
         return listaMayoresStockCien;
     }
+    /**
+     * este metodo retorna el costo total de un pedido determinado
+     * @param cliente
+     * @return
+     */
     public double costoTotalPedido(Cliente cliente) {
         double costo = 0;
         for (Pedido pedido : ListaPedidos) {

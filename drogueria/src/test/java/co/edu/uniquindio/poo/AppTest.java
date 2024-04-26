@@ -7,6 +7,7 @@
  */
 package co.edu.uniquindio.poo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -51,8 +52,7 @@ public class AppTest {
         drogueria.registrarEmpleado(gerente);
 
         drogueria.registrarPedido(pedido);
-
-
+       assertEquals("Municipal", drogueria.getNombre());
 
         LOG.info("Finalizando test TodoCompleto");
     }
@@ -158,10 +158,7 @@ public class AppTest {
                 drogueria.registrarPedido(pedido2);
                 drogueria.registrarPedido(pedido3);
 
-        
-                
-    
-                System.err.println(drogueria.costoTotalPedido(Maria));
+                System.out.println(drogueria.costoTotalPedido(Maria));
                 System.out.println(drogueria.costoTotalPedido(Tomas));
         
                 LOG.info("Finalizando test saberCostodeunProducto");
