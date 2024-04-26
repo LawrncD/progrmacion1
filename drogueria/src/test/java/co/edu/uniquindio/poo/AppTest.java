@@ -125,8 +125,8 @@ public class AppTest {
             LOG.info("Finalizando test prductos_stock_100");
         }
             @Test
-            public void saberCostodeunProducto() {
-                LOG.info("Iniciado test saberCostodeunProducto");
+            public void saberCostodeunPedido() {
+                LOG.info("Iniciado test saberCostodeunPedido");
                 Drogueria drogueria = new Drogueria("Municipal");
         
                 Medicamento acetaminofen = new Medicamento("00123", "acetaminofen", "cada 8 horas", 1000, 1, "Jaimes", 8);
@@ -161,6 +161,6 @@ public class AppTest {
                 System.out.println(drogueria.costoTotalPedido(Maria));
                 System.out.println(drogueria.costoTotalPedido(Tomas));
         
-                LOG.info("Finalizando test saberCostodeunProducto");
+                LOG.info("Finalizando test saberCostodeunPedido");
 }
 }
