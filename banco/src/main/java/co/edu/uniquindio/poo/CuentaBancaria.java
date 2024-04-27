@@ -50,7 +50,7 @@ public class CuentaBancaria {
     }
 
     public void setSaldo(double saldo2) {
-        this.saldo=saldo2;
+        this.saldo = saldo2;
     }
 
     public TipoCuenta getTipoCuenta() {
@@ -86,24 +86,24 @@ public class CuentaBancaria {
     }
 
     public void sumarSobregiro(double valor) {
-       sobregiro = sobregiro + valor;
+        sobregiro = sobregiro + valor;
 
-       if(sobregiro > TipoCuenta.CORRIENTE.valor){
-         
-           sobregiro = TipoCuenta.CORRIENTE.valor;
-      }
+        if (sobregiro > TipoCuenta.CORRIENTE.valor) {
+
+            sobregiro = TipoCuenta.CORRIENTE.valor;
+        }
     }
 
     public void restarSobregiro(double valor) {
         sobregiro = sobregiro - valor;
     }
-    public boolean verificarActividad(){
-        boolean actividad = false;
-        if(saldo > 0){
-             actividad = true;
 
-        }
-        else{
+    public boolean verificarActividad() {
+        boolean actividad = false;
+        if (saldo > 0) {
+            actividad = true;
+
+        } else {
             actividad = false;
         }
         return actividad;
