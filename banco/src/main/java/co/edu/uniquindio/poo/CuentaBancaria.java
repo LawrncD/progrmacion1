@@ -10,6 +10,9 @@ public class CuentaBancaria {
     public double sobregiro;
 
     public CuentaBancaria(String nombreTitular, String apellidoTitular, String numeroCuenta, TipoCuenta tipoCuenta) {
+        assert nombreTitular != null && !nombreTitular.isBlank();
+        assert apellidoTitular != null && !apellidoTitular.isBlank();
+        assert numeroCuenta != null && !numeroCuenta.isBlank();
         this.nombreTitular = nombreTitular;
         this.apellidoTitular = apellidoTitular;
         this.numeroCuenta = numeroCuenta;

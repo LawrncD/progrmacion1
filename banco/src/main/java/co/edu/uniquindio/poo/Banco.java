@@ -8,6 +8,7 @@ public class Banco {
     private final Collection<CuentaBancaria> listaCuentas;
 
     public Banco(String nombre) {
+        assert nombre != null && !nombre.isBlank();
         this.nombre = nombre;
         this.listaCuentas = new LinkedList<CuentaBancaria>();
     }
