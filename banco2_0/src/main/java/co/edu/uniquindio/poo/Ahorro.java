@@ -28,9 +28,9 @@ public class Ahorro extends CuentaBancaria{
         }
     }
 
-    public static void crearCuentaCorriente(String nombreTitular, String apellidoTitular, String numeroCuenta,
-            int interes) {
-        Ahorro cuenta_Ahorro = new Ahorro(nombreTitular, apellidoTitular, numeroCuenta, interes);
+    public static void crearCuentaAhorro(String nombreTitular, String apellidoTitular, String numeroCuenta,
+            double interes2) {
+        Ahorro cuenta_Ahorro = new Ahorro(nombreTitular, apellidoTitular, numeroCuenta, interes2);
         Banco.agregarCuenta(cuenta_Ahorro);
     }
 

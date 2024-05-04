@@ -7,8 +7,8 @@ public abstract class CuentaBancaria {
     private final String nombreTirular;
     private final String apellidosTitular;
     private final String numeroCuenta;
-    private static int saldo;
-    private static boolean estado;
+    public  int saldo;
+    private  boolean estado;
     private Collection<Transaccion> listaTransaccions;
     protected Object getNumeroCuenta;
 
@@ -16,8 +16,8 @@ public abstract class CuentaBancaria {
         this.nombreTirular = nombreTirular;
         this.apellidosTitular = apellidosTitular;
         this.numeroCuenta = numeroCuenta;
-        CuentaBancaria.saldo = 0;
-        CuentaBancaria.estado = true;
+        this.saldo = 0;
+        this.estado = false;
         this.listaTransaccions = new LinkedList<Transaccion>();
     }
 
@@ -33,12 +33,12 @@ public abstract class CuentaBancaria {
         return numeroCuenta;
     }
 
-    public int getSaldo() {
+    public  int getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
-        CuentaBancaria.saldo = saldo;
+    public  void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
     public boolean isEstado() {
@@ -46,7 +46,7 @@ public abstract class CuentaBancaria {
     }
 
     public void setEstado(boolean estado) {
-        CuentaBancaria.estado = estado;
+        this.estado = estado;
     }
 
     public Collection<Transaccion> getListaTransaccions() {
@@ -66,13 +66,27 @@ public abstract class CuentaBancaria {
 
     public abstract void retirar(int valor);
 
-    public static void depositar(int valor) {
+    public void depositar(int valor) {
         assert valor > 0 : "Deposita un valor positivo";
-        saldo = saldo + valor;
-        estado = true;
+        int saldoNuevo = getSaldo() + valor;
+        setSaldo(saldoNuevo);
+        setEstado(true);
     }
 
     public void agregarTransaccion(Transaccion transaccion) {
      listaTransaccions.add(transaccion);
     }
+    public String consultarSaldo() {
+       String saldoConsultado = "";
+       int valorConsultado = 0;
+        if(isEstado()== true){
+            valorConsultado = valorConsultado + getSaldo();
+            saldoConsultado = "Su saldo es de: " + getSaldo();
+       }
+       else{
+        saldoConsultado = "Su cuenta esta desactivada";
+       }
+        return saldoConsultado;
+    }
+
 }

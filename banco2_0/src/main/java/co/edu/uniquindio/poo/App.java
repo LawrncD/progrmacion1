@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+
 /**
  * 
  *
@@ -59,15 +60,15 @@ public class App extends JFrame {
         });
 
         // creo un campo para añadir el nombre del titular
-        JTextField nombreTitularField = new JTextField(20);
+        JTextField nombreTitularField = new JTextField("Ingresa el nombre del titular",20);
         panel.add(nombreTitularField);
 
         // creo un campo para añadir el apellido del titular
-        JTextField apellidoField = new JTextField(20);
+        JTextField apellidoField = new JTextField("Ingresa el apellido del titular",20);
         panel.add(apellidoField);
 
         // creo un campo para añadir el numero de la cuenta
-        JTextField numeroCuentaField = new JTextField(20);
+        JTextField numeroCuentaField = new JTextField("Ingresa el nuemro de la cuenta",20);
         panel.add(numeroCuentaField);
 
         // Crea un combo box para seleccionar la cuenta
@@ -75,8 +76,8 @@ public class App extends JFrame {
         JComboBox tipoCuentaComboBox = new JComboBox<>(TipoCuenta.values());
         panel.add(tipoCuentaComboBox);
 
-        // creo un campo para añadir el numero de la cuenta
-        JTextField sobregiro_interesField = new JTextField(20);
+        // creo un campo para añadir el valor de sobregiro o interes de la cuenta
+        JTextField sobregiro_interesField = new JTextField("Ingresa el sobregiro o interes",20);
         panel.add(sobregiro_interesField);
 
         // creo un boton para crear la cuenta bancaria
@@ -119,16 +120,15 @@ public class App extends JFrame {
                     String nombreTitular = nombreTitularField.getText();
                     String apellidoTitular = apellidoField.getText();
                     String numeroCuenta = numeroCuentaField.getText();
-                    int interes = Integer.parseInt(sobregiro_interesField.getText());
+                    double interes = Double.parseDouble(sobregiro_interesField.getText());
 
-                    Ahorro.crearCuentaCorriente(nombreTitular, apellidoTitular, numeroCuenta, interes);
+                    Ahorro.crearCuentaAhorro(nombreTitular, apellidoTitular, numeroCuenta, interes);
                     JOptionPane.showMessageDialog(nombreBancoField, "'Cuenta  ahorros creada exitosamente!");
                     actualizarListaCuentas();
                 }
 
                 // Creo la implementacion del boton deposito
                 botonDeposiButton.addActionListener(new ActionListener() {
-                    @SuppressWarnings("static-access")
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         String codigo = codigoRetiro_DepositoField.getText();
@@ -149,11 +149,10 @@ public class App extends JFrame {
                         String codigo = codigoRetiro_DepositoField.getText();
                         int deposito = Integer.parseInt(valorretiroOdepositoFiel.getText());
                         for (CuentaBancaria cuenta : Banco.getListaCuentaBancarias()) {
-                            if (cuenta.getNumeroCuenta().equals(codigo)) {
-                                cuenta.retirar(deposito);
-                                actualizarListaCuentas();
-                                //tengo que arreglar el metodo ya que depende si es una cuetna de ahorros o corriente, tengo que realizarlocon un condicional de que si es ahorros o corriente recorriendo la lista de cuentas del banco y lueog verificar y es una o la otra para saber que tipo de retirar usar.
-                            }
+                                if (cuenta.getNumeroCuenta().equals(codigo)) {
+                                    cuenta.retirar(deposito);
+                                    actualizarListaCuentas();
+                                }
                         } 
                     }
                 });
