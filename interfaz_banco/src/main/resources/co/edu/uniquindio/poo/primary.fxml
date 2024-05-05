@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.PrimaryController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="-5.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="410.0" prefWidth="606.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="94.0" layoutY="14.0" prefHeight="25.0" prefWidth="107.0" text="Nombre Banco" />
+                  <Button fx:id="btnCrearBanco" layoutX="333.0" layoutY="14.0" mnemonicParsing="false" onAction="#crearBanco" text="Agregar Banco" textAlignment="CENTER" />
+                  <Label layoutX="36.0" layoutY="62.0" prefHeight="18.0" prefWidth="94.0" text="Nombre Titular" />
+                  <Label layoutX="139.0" layoutY="62.0" prefHeight="18.0" prefWidth="94.0" text="Apellido Titular" />
+                  <Label layoutX="251.0" layoutY="62.0" prefHeight="18.0" prefWidth="94.0" text="Numero Cuenta" />
+                  <Label layoutX="388.0" layoutY="62.0" prefHeight="18.0" prefWidth="78.0" text="Informacion Extra" />
+                  <Button fx:id="btnCrearCUenta" layoutX="168.0" layoutY="116.0" mnemonicParsing="false" onAction="#crearCuentaAhorros" text="Crear Cuenta Ahorros" />
+                  <TextField fx:id="txNombreTitular" layoutX="22.0" layoutY="79.0" prefHeight="26.0" prefWidth="107.0" />
+                  <TextField fx:id="txApellidoTitular" layoutX="132.0" layoutY="79.0" prefHeight="26.0" prefWidth="107.0" />
+                  <TextField fx:id="txNumeroCuenta" layoutX="244.0" layoutY="79.0" prefHeight="26.0" prefWidth="107.0" />
+                  <TextField fx:id="txInformacionExtraCuenta" layoutX="377.0" layoutY="79.0" prefHeight="26.0" prefWidth="115.0" />
+                  <TextField fx:id="txNombreBanco" layoutX="190.0" layoutY="14.0" prefHeight="18.0" prefWidth="130.0" />
+                  <Button fx:id="btnCrearCuentaCorriente" layoutX="311.0" layoutY="116.0" mnemonicParsing="false" onAction="#crearCuentaCorriente" text="Crear Cuenta Corriente" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="343.0" layoutY="22.0" prefHeight="18.0" prefWidth="223.0" text="Valor a Depositar o Retitar" />
+                  <TextField fx:id="txValorDoR" layoutX="343.0" layoutY="40.0" />
+                  <Label layoutX="343.0" layoutY="74.0" prefHeight="18.0" prefWidth="223.0" text="Codigo Cuenta" />
+                  <TextField fx:id="txCodigoCuenta" layoutX="343.0" layoutY="92.0" />
+                  <Button fx:id="btnDepositar" layoutX="343.0" layoutY="131.0" mnemonicParsing="false" onAction="#depositar" text="Depositar" />
+                  <Button fx:id="btnRetirar" layoutX="429.0" layoutY="131.0" mnemonicParsing="false" onAction="#retirar" text="Retirar" />
+                  <Label fx:id="listListaCuentas" alignment="CENTER" layoutX="4.0" layoutY="5.0" prefHeight="192.0" prefWidth="338.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

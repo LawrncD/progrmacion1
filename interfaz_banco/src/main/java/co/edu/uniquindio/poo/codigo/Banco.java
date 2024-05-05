@@ -1,20 +1,20 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.codigo;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import javax.swing.JOptionPane;
+
 
 public class Banco {
-    private final String nombre;
+    private static String nombre;
     private  static Collection<CuentaBancaria> listaCuentaBancarias;
 
     public Banco(String nombre) {
-        this.nombre = nombre;
+        Banco.nombre = nombre;
         Banco.listaCuentaBancarias = new LinkedList<CuentaBancaria>();
     }
 
-    public String getNombre() {
+    public static String getNombre() {
         return nombre;
     }
 
@@ -35,21 +35,26 @@ public class Banco {
         listaCuentaBancarias.add(cuenta);
     }
     
-    public static void crearBanco(String nombre){
-        new Banco(nombre);
-        System.out.println("EL banco se creo con exito");
+    public static void crearBancoNuevo(String nombre){
+        @SuppressWarnings("unused")
+        Banco banco = new Banco(nombre);
+        System.out.println("EL banco se creo con exito  " + getNombre());
+        
     }
 
-    public String obtenerListaCuentas() {
+    public static String obtenerLista() {
         String listaCuentasArea = "";
+        listaCuentasArea = listaCuentasArea + getNombre() + "\n";
         for (CuentaBancaria cuenta : Banco.getListaCuentaBancarias()) {
-            listaCuentasArea = listaCuentaBancarias + "Nombre Titular: " + cuenta.getNombreTirular() + "Apellido Titular: "
-                    + cuenta.getApellidosTitular() + " Numero Cuenta: " + cuenta.getNumeroCuenta()
-                    + " Saldo de la cuenta: " + cuenta.getSaldo() + "\n";
+            listaCuentasArea =   cuenta.getNombreTirular() +  " "
+                    + cuenta.getApellidosTitular() + " "+  cuenta.getNumeroCuenta()+" "
+                    + " Saldo: " + cuenta.getSaldo() + "\n";
 
         }
         return listaCuentasArea;
     }
+    
+    
 
  
 }
