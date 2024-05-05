@@ -1,7 +1,5 @@
 package co.edu.uniquindio.poo;
 
-import javax.swing.JTextField;
-
 public class Corriente extends CuentaBancaria{
     private int sobregiro;
 

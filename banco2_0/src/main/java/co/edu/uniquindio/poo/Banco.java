@@ -3,8 +3,6 @@ package co.edu.uniquindio.poo;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import javax.swing.JOptionPane;
-
 public class Banco {
     private final String nombre;
     private  static Collection<CuentaBancaria> listaCuentaBancarias;

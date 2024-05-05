@@ -2,26 +2,17 @@
 package co.edu.uniquindio.poo;
 
 import java.net.URL;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.codigo.Ahorro;
 import co.edu.uniquindio.poo.codigo.Banco;
 import co.edu.uniquindio.poo.codigo.Corriente;
 import co.edu.uniquindio.poo.codigo.CuentaBancaria;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 
 public class PrimaryController {
 
